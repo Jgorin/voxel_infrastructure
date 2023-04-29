@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1904b121879db48eeb5ca937322fd363
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerTransform: {instanceID: 0}
+  - terrainGenerator: {instanceID: 0}
+  - terrainGeneratorOptions: {fileID: 11400000, guid: 2338e840573cc45a3aa55d735f42b6bb, type: 2}
+  - terrainRendererOptions: {fileID: 11400000, guid: 064072e6e43ec4b139e02a924bafbdd8, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
