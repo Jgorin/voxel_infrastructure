@@ -13,6 +13,7 @@ float persistence;
 float noiseScale;
 float noiseWeight;
 
+
 [numthreads(8,8,8)]
 void NoiseMap (int3 id : SV_DispatchThreadID)
 {

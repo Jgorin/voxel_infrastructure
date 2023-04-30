@@ -12,7 +12,6 @@ public class TerrainChunk : MonoBehaviour
     private static int voxelKernel = voxelShader.FindKernel("March");
     
     public Vector3Int coords;
-    public List<TerrainDecoratorAsset> decorators = new List<TerrainDecoratorAsset>();
     public bool isGenerated = false;
     private TerrainManager manager;
     private MeshFilter mf;
@@ -42,9 +41,6 @@ public class TerrainChunk : MonoBehaviour
         this.isGenerated = true;
         // add default material to meshrenderer
         this.mr.material = manager.terrainMaterial;
-
-        // add decorators
-        // this.manager.terrainGenerator.chunkDecorator.DecorateChunk(this);
     }
 
 

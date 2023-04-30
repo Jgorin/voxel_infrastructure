@@ -5,7 +5,6 @@ public class TerrainGenerator: MonoBehaviour
 {
     private Queue<TerrainChunk> chunksToGenerate;
     private TerrainManager manager;
-    public TerrainChunkDecorator chunkDecorator;
     private ComputeBuffer densityMapBuffer;
     private ComputeBuffer densityBuffer;
     private ComputeBuffer voxelBuffer;
@@ -24,8 +23,6 @@ public class TerrainGenerator: MonoBehaviour
         this.densityBuffer = new ComputeBuffer(manager.terrainGeneratorOptions.numPointsPerAxis * manager.terrainGeneratorOptions.numPointsPerAxis * manager.terrainGeneratorOptions.numPointsPerAxis, sizeof(float) * 4);
         this.voxelBuffer = new ComputeBuffer (maxTriangleCount, sizeof (float) * 3 * 3, ComputeBufferType.Append);
         this.voxelCountBuffer = new ComputeBuffer (1, sizeof (int), ComputeBufferType.Raw);
-
-        this.chunkDecorator = TerrainChunkDecorator.Init(manager);
     }
 
 
@@ -61,7 +58,7 @@ public class TerrainGenerator: MonoBehaviour
             }
         }
 
-        // derender chunks that are too far away
+        // unrender chunks that are too far away
         List<Vector3Int> coordsToRemove = new List<Vector3Int>();
         foreach(Vector3Int coords in this.manager.renderedChunks.Keys){
             if (Mathematics.SquareDistance(coords, playerCoords) > squareRadius){
